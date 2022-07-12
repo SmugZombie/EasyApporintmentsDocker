@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+  easyappointments:
+    build:
+        context: ./
+    ports:
+    - "8888:8888"
+    volumes:
+    - ./app:/var/www/html/
+    - ./config/config.php:/var/www/html/config.php
+    - ./config/ports.conf:/etc/apache2/ports.conf
+    - ./config/easy.conf /etc/apache2/sites-enabled/easy.conf
